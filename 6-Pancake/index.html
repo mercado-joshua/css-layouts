@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.max-wrapper {
+    max-width: 992px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section {
+    background-color: #ccc;
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    min-height: 100vh;
+}
+</style>
+</head>
+<body>
+    <div class="max-wrapper">
+        <div class="grid">
+            <header class="header-section section">
+                <h1 class="title">Pancake Layout</h1>
+            </header>
+
+            <main class="main-section section">
+                <h2 class="title">Content Title</h2>
+                <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt ipsam nulla modi doloribus quo, voluptatibus cum odit saepe labore cupiditate voluptate quod mollitia hic, praesentium, consequatur aliquam quidem. Consectetur aperiam blanditiis nemo nam quaerat officiis, quae doloribus exercitationem voluptatum, animi eum numquam sequi quisquam id laboriosam, molestias fugiat neque vero.</p>
+            </main>
+
+            <footer class="footer-section section">
+                <p class="description">&copy; 2022. All Rights Reserved</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

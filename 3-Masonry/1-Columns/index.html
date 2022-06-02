@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"Masonry" Property / Column Fallback Masonry Layout</title>
+<style>
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.max-wrapper {
+    max-width: 992px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.404);
+}
+
+.masonry {
+    display: column;
+    columns: 3;
+    column-gap: 1rem;
+}
+
+.masonry > .card {
+    break-inside: avoid; /* avoids breaking of contents, think of it as page break */
+}
+
+.card + .card {
+    margin-top: 1rem;
+}
+
+
+@supports ( grid-template-rows: masonry ) {
+    .masonry {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+
+        grid-template-rows: masonry; /* works in firefox but not on safari and chrome */
+        align-tracks: stretch; /* experimental featire, may not work */
+    }
+
+    .card + .card {
+        margin-top: 0;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="masonry-section">
+        <div class="max-wrapper">
+            <h2 class="title">Masonry - "masonry" property / column fallback</h2>
+
+            <div class="masonry">
+                <div class="card">
+                    <img class="image" src="https://picsum.photos/300/400" alt="">
+                </div>
+
+                <div class="card">
+                    <h2 class="title">Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugiat a quos! Rem quam eligendi, aspernatur, molestiae itaque harum necessitatibus repudiandae placeat dolorum iusto dolorem nam, consequuntur ex sint doloribus.</p>
+                    <button>Read more</button>
+                </div>
+
+                <div class="card">
+                    <img class="image" src="https://picsum.photos/300/200" alt="">
+                </div>
+
+                <div class="card">
+                    <h2 class="title">Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugiat a quos! Rem quam eligendi, aspernatur, molestiae itaque harum necessitatibus repudiandae placeat dolorum iusto dolorem nam, consequuntur ex sint doloribus.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugiat a quos! Rem quam eligendi, aspernatur, molestiae itaque harum necessitatibus repudiandae placeat dolorum iusto dolorem nam, consequuntur ex sint doloribus.</p>
+                    <button>Read more</button>
+                </div>
+
+                <div class="card">
+                    <img class="image" src="https://picsum.photos/300/400" alt="">
+                </div>
+
+                <div class="card">
+                    <img class="image" src="https://picsum.photos/300/300" alt="">
+                </div>
+
+                <div class="card">
+                    <h2 class="title">Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugiat a quos! Rem quam eligendi, aspernatur, molestiae itaque harum necessitatibus repudiandae placeat dolorum iusto dolorem nam, consequuntur ex sint doloribus.</p>
+                    <button>Read more</button>
+                </div>
+
+                <div class="card">
+                    <h2 class="title">Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugiat a quos! Rem quam eligendi, aspernatur, molestiae itaque harum necessitatibus repudiandae placeat dolorum iusto dolorem nam, consequuntur ex sint doloribus.</p>
+                    <button>Read more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    *::before,
+    *::after,
+    * {
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-wrapper {
+        max-width: 992px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border: 0;
+    }
+
+    .header-section {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .blog-section {
+        padding-bottom: 2rem;
+    }
+
+    .featured-post {
+        padding: 2rem 0;
+    }
+
+    @media screen and ( min-width: 446px ) {
+        .featured-post {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    @media screen and ( min-width: 455px ) {
+        .blog-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .featured-post {
+            grid-column: 1 / 4;
+        }
+    }
+</style>    
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="header-section">
+            <h2 class="title">Globe Roamer</h2>
+        </header>
+    
+        <section class="blog-section">
+            <article class="featured-post">
+                <div class="imagebox">
+                    <img class="image" src="https://picsum.photos/400/200" alt="">
+                </div>
+    
+                <div class="contentbox">
+                    <h2 class="title">Main Balloon Mirror</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illum aliquam, quas molestiae nostrum delectus quaerat, adipisci necessitatibus quae asperiores ab sit odio numquam porro repellat. Ad ea vero nemo.</p>
+                </div>
+            </article>
+    
+            <article class="post">
+                <div class="imagebox">
+                    <img class="image" src="https://picsum.photos/400/200" alt="">
+                </div>
+    
+                <div class="contentbox">
+                    <h2 class="title">Balloon Mirror 1</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illum aliquam, quas molestiae nostrum delectus quaerat, adipisci necessitatibus quae asperiores ab sit odio numquam porro repellat. Ad ea vero nemo.</p>
+                </div>
+            </article>
+    
+            <article class="post">
+                <div class="imagebox">
+                    <img class="image" src="https://picsum.photos/400/200" alt="">
+                </div>
+    
+                <div class="contentbox">
+                    <h2 class="title">Balloon Mirror 2</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illum aliquam, quas molestiae nostrum delectus quaerat, adipisci necessitatibus quae asperiores ab sit odio numquam porro repellat. Ad ea vero nemo.</p>
+                </div>
+            </article>
+    
+            <article class="post">
+                <div class="imagebox">
+                    <img class="image" src="https://picsum.photos/400/200" alt="">
+                </div>
+    
+                <div class="contentbox">
+                    <h2 class="title">Balloon Mirror 3</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illum aliquam, quas molestiae nostrum delectus quaerat, adipisci necessitatibus quae asperiores ab sit odio numquam porro repellat. Ad ea vero nemo.</p>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
+</html>

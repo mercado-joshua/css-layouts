@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colcade.js Masonry Layout</title>
+<style>
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.max-wrapper {
+    max-width: 992px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* with flexbox */
+.grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.grid-col {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.grid-item + .grid-item {
+    margin-top: 1rem;
+}
+
+.grid-item {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.466);
+}
+
+/* 2 columns by default, hide columns 2 & 3 */
+.grid-col--2, .grid-col--3 { display: none }
+
+/* 3 columns at medium size */
+@media ( min-width: 768px ) {
+  .grid-col--2 { display: block; } /* show column 2 */
+}
+
+/* 4 columns at large size */
+@media ( min-width: 1080px ) {
+  .grid-col--3 { display: block; } /* show column 3 */
+}
+</style>
+</head>
+<body>
+<div class="max-wrapper">
+    <h2 class="title">Masonry - colcade.js</h2>
+
+    <div class="grid">
+        <!-- columns -->
+        <div class="grid-col grid-col--1"></div>
+        <div class="grid-col grid-col--2"></div>
+        <div class="grid-col grid-col--3"></div>
+
+        <!-- items -->
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/200" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/400" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/300" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/300" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/200" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/500" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/200" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/400" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/300" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/300" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/200" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+        <div class="grid-item">
+            <img class="image" src="https://picsum.photos/400/500" alt="">
+
+            <h2 class="title">Card Title</h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aliquid repudiandae dolor! Excepturi, debitis dolor aut repellat voluptatibus, ut quia consequatur rerum non veritatis repudiandae numquam dicta reiciendis, at minus.</p>
+
+            <button>Read more</button>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/colcade@0/colcade.js"></script>
+<script>
+// element as first argument
+const grid = document.querySelector('.grid');
+const colc = new Colcade( grid, {
+    columns: '.grid-col',
+    items: '.grid-item'
+});
+</script>
+</body>
+</html>

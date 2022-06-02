@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+
+/* grid inside of another grid */
+
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.primary-menu .link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.main-wrapper {
+    min-height: 100vh;
+}
+
+.navigation-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #333231;
+    color: #F0F2EA;
+    padding: 1rem;
+}
+
+.about-panel .contentbox {
+    padding: 1rem;
+    background-color: #BEBEBA;
+}
+
+.photo-panel .contentbox {
+    padding: 1rem;
+    background-color: #EEEEE8;
+}
+
+@media only screen and (min-width: 600px) {
+    .about-panel,
+    .photo-panel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .about-panel > .image,
+    .photo-panel > .image {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .photo-panel .contentbox {
+        order: -1;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .main-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-panel {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    .photo-panel {
+        grid-column: span 2;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .main-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .photo-panel {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <main class="main-wrapper">
+        <div class="navigation-panel">
+            <nav class="navigation">
+                <ul class="primary-menu">
+                    <li class="item"><a href="#" class="link">Home</a></li>
+                    <li class="item"><a href="#" class="link">About</a></li>
+                    <li class="item"><a href="#" class="link">Portfolio</a></li>
+                    <li class="item"><a href="#" class="link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="contentbox">
+                <h2 class="title">Full-with Grid Title</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt atque porro magnam sequi debitis ea nemo optio. Minus suscipit vitae cupiditate quis. Corrupti a, placeat voluptate eveniet reiciendis magni illo.</p>
+            </div>
+
+            <footer class="footer-section">
+                <p class="description">&copy; 2022. All Rights Reserved.</p>
+            </footer>
+        </div>
+        <!-- .navigation-panel ends -->
+
+        <div class="about-panel">
+            <img src="https://picsum.photos/1400/1400" alt="" class="image">
+
+            <div class="contentbox">
+                <h2 class="title">About Me</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quae sed possimus tempore corporis earum, sint beatae odit aliquid corrupti qui doloremque minus ab similique mollitia iusto autem asperiores facilis.</p>
+            </div>
+        </div>
+        <!-- .about-panel ends -->
+
+        <div class="photo-panel">
+            <img src="https://picsum.photos/1400/1400" alt="" class="image">
+
+            <div class="contentbox">
+                <h2 class="title">My Photos</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quae sed possimus tempore corporis earum, sint beatae odit aliquid corrupti qui doloremque minus ab similique mollitia iusto autem asperiores facilis.</p>
+            </div>
+        </div>
+        <!-- .about-panel ends -->
+    </main>
+</body>
+</html>
